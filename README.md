@@ -143,6 +143,19 @@ Seek           →   Position Update    →   Progress Bar
 ```
 
 ---
+## 📥 Download Video Explanation & Trial APK
+
+You can scan the QR code below to directly access the Drive folder containing:
+
+- 🎥 Video explanation  
+- 📱 Trial APK  
+- 📂 Additional project files  
+
+### 🔗 Drive Link  
+https://drive.google.com/drive/folders/1YE-_zQuO7_humYy8_xFZryLNQzMNds4E?usp=sharing
+
+### 📸 QR Code  
+![Drive QR Code](screenshots/qr.png")
 
 ## 🎯 Roadmap
 
