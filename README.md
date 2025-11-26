@@ -155,7 +155,7 @@ You can scan the QR code below to directly access the Drive folder containing:
 https://drive.google.com/drive/folders/1YE-_zQuO7_humYy8_xFZryLNQzMNds4E?usp=sharing
 
 ### 📸 QR Code  
-![Drive QR Code](screenshots/qr.png")
+![Drive QR Code](screenshots/qr.png)
 
 ## 🎯 Roadmap
 
