@@ -10,6 +10,7 @@ class PlayerControls extends StatelessWidget {
     return Consumer<AudioPlayerProvider>(
       builder: (context, provider, _) {
         return Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // ---- Shuffle & Repeat ----
             Padding(
@@ -33,7 +34,7 @@ class PlayerControls extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 18),
+            const SizedBox(height: 12),
 
             // ---- Main Controls ----
             Row(
@@ -45,9 +46,9 @@ class PlayerControls extends StatelessWidget {
                   onTap: provider.hasPrevious ? provider.playPrevious : null,
                 ),
 
-                const SizedBox(width: 28),
+                const SizedBox(width: 22),
 
-                // Main play button
+                // MAIN PLAY BUTTON
                 GestureDetector(
                   onTap: provider.togglePlayPause,
                   child: Container(
@@ -63,9 +64,10 @@ class PlayerControls extends StatelessWidget {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Theme.of(context).primaryColor.withOpacity(0.5),
-                          blurRadius: 16,
-                          offset: const Offset(0, 4),
+                          color:
+                          Theme.of(context).primaryColor.withOpacity(0.4),
+                          blurRadius: 14,
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -79,7 +81,7 @@ class PlayerControls extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(width: 28),
+                const SizedBox(width: 22),
 
                 _sideBtn(
                   icon: Icons.skip_next_rounded,
@@ -94,7 +96,7 @@ class PlayerControls extends StatelessWidget {
     );
   }
 
-  // Small rounded chip (Shuffle / Repeat)
+  // Small rounded chip
   Widget _chip(BuildContext context,
       {required IconData icon,
         required bool active,
@@ -102,21 +104,19 @@ class PlayerControls extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: active
-                ? Theme.of(context).primaryColor
-                : Colors.white30,
-          ),
+              color: active
+                  ? Theme.of(context).primaryColor
+                  : Colors.white30),
         ),
         child: Icon(
           icon,
           size: 18,
-          color: active
-              ? Theme.of(context).primaryColor
-              : Colors.white70,
+          color:
+          active ? Theme.of(context).primaryColor : Colors.white70,
         ),
       ),
     );
@@ -130,17 +130,16 @@ class PlayerControls extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 46,
-        height: 46,
+        width: 44,
+        height: 44,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color:
-          enabled ? Colors.white12 : Colors.white10.withOpacity(0.3),
+          color: enabled ? Colors.white12 : Colors.white10,
         ),
         child: Icon(
           icon,
-          size: 28,
+          size: 26,
           color: enabled ? Colors.white : Colors.white30,
         ),
       ),

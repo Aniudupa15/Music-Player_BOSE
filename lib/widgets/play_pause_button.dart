@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../providers/audio_player_provider.dart';
 
 class PlayPauseButton extends StatelessWidget {
@@ -12,8 +14,8 @@ class PlayPauseButton extends StatelessWidget {
         return GestureDetector(
           onTap: provider.togglePlayPause,
           child: Container(
-            width: 80,
-            height: 80,
+            width: 70,
+            height: 70,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               gradient: LinearGradient(
@@ -22,17 +24,10 @@ class PlayPauseButton extends StatelessWidget {
                   Theme.of(context).colorScheme.secondary,
                 ],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Theme.of(context).primaryColor.withOpacity(0.5),
-                  blurRadius: 20,
-                  spreadRadius: 2,
-                ),
-              ],
             ),
             child: Icon(
               provider.isPlaying ? Icons.pause : Icons.play_arrow,
-              size: 40,
+              size: 36,
               color: Colors.white,
             ),
           ),

@@ -28,12 +28,13 @@ class PlayerScreen extends StatelessWidget {
               return Column(
                 children: [
                   _appBar(context),
-                  const SizedBox(height: 10),
 
-                  // Smaller artwork
+                  const Spacer(),
+
+                  // Artwork
                   SizedBox(
-                    height: 220,
-                    width: 220,
+                    height: 200,
+                    width: 200,
                     child: AlbumArtWidget(albumArt: track.albumArt),
                   ),
 
@@ -41,46 +42,37 @@ class PlayerScreen extends StatelessWidget {
 
                   // Track info
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Column(
                       children: [
                         Text(
                           track.title,
                           style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),
                         const SizedBox(height: 4),
-                        Text(
-                          track.artist ?? "Unknown Artist",
-                          style:
-                          const TextStyle(color: Colors.white70, fontSize: 14),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          track.album ?? "",
-                          style:
-                          const TextStyle(color: Colors.white54, fontSize: 12),
-                        ),
+                        Text(track.artist ?? "Unknown Artist",
+                            style: const TextStyle(
+                                color: Colors.white70, fontSize: 14)),
                       ],
                     ),
                   ),
 
                   const SizedBox(height: 16),
 
-                  // Seek bar compact
+                  // Seek bar
                   const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 22),
+                    padding: EdgeInsets.symmetric(horizontal: 16),
                     child: SeekBarWidget(),
                   ),
 
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 12),
 
-                  // Compact controls
+                  // Controls
                   const PlayerControls(),
 
                   const Spacer(),
@@ -102,10 +94,8 @@ class PlayerScreen extends StatelessWidget {
             onTap: () => Navigator.pop(context),
             child: Container(
               padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white10,
-              ),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.white10),
               child: const Icon(Icons.keyboard_arrow_down_rounded,
                   color: Colors.white),
             ),
@@ -114,12 +104,12 @@ class PlayerScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
             decoration: BoxDecoration(
-              color: Colors.white12,
-              borderRadius: BorderRadius.circular(18),
-            ),
+                color: Colors.white12,
+                borderRadius: BorderRadius.circular(18)),
             child: Row(
               children: const [
-                Icon(Icons.music_note_rounded, size: 16, color: Colors.white),
+                Icon(Icons.music_note_rounded,
+                    size: 16, color: Colors.white),
                 SizedBox(width: 6),
                 Text("Now Playing",
                     style: TextStyle(color: Colors.white, fontSize: 13)),
@@ -129,11 +119,10 @@ class PlayerScreen extends StatelessWidget {
           const Spacer(),
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white10,
-            ),
-            child: const Icon(Icons.queue_music_rounded, color: Colors.white),
+            decoration: const BoxDecoration(
+                shape: BoxShape.circle, color: Colors.white10),
+            child:
+            const Icon(Icons.queue_music_rounded, color: Colors.white),
           ),
         ],
       ),
@@ -142,10 +131,8 @@ class PlayerScreen extends StatelessWidget {
 
   Widget _empty(BuildContext context) {
     return const Center(
-      child: Text(
-        "No track loaded",
-        style: TextStyle(color: Colors.white, fontSize: 18),
-      ),
+      child: Text("No track loaded",
+          style: TextStyle(color: Colors.white, fontSize: 18)),
     );
   }
 }
